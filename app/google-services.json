@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1019154739516",
+    "project_id": "firebase-xat2"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1019154739516:android:95de9ee404872294",
+        "android_client_info": {
+          "package_name": "com.impvhc.xat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1019154739516-63b7e6hreocjkiirrqimg97g2p47ub9c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.impvhc.xat",
+            "certificate_hash": "ce01c5e34138558e294b625d2157787f5c2b7773"
+          }
+        },
+        {
+          "client_id": "1019154739516-1ptemc6rn7cad5p4tgv57ajrde4k1jlq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2ojSlsI23KYwzehCNcGwr33KGzivoBSc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

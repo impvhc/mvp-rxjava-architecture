@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Xat</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="sign_in">Sign In</string>
+    <string name="create_account">Create New Account</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="app_sub_title">Application Template</string>
+    <string name="display_name">Display Name</string>
+    <string name="validating_user">Validating User</string>
+    <string name="title_activity_main">MainActivity</string>
+</resources>
