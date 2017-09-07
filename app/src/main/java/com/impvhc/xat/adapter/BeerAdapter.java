@@ -34,6 +34,7 @@ public class BeerAdapter extends RecyclerView.Adapter<BeerViewHolder> {
         BeerResponse beerResponse = mBeerResponseList.get(position);
         holder.setBeerName(beerResponse.getName());
         holder.setBeerDescription(beerResponse.getDescription());
+        holder.setBeerImage(beerResponse.getImage_url());
     }
 
     @Override
