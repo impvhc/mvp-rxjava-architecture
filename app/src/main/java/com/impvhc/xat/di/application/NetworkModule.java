@@ -7,8 +7,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.impvhc.xat.Constant;
 
-import java.io.IOException;
-
 import dagger.Module;
 import dagger.Provides;
 import okhttp3.Cache;
@@ -16,7 +14,6 @@ import okhttp3.Headers;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -62,16 +59,13 @@ public class NetworkModule {
     @Provides
     @ApplicationScope
     Interceptor provideInterceptor() {
-        return new Interceptor() {
-            @Override
-            public Response intercept(Chain chain) throws IOException {
-                Request request = chain.request();
-                Headers.Builder builder = request.headers().newBuilder();
-                builder.add("X-Parse-Application-Id", Constant.APP_ID);
-                builder.add("X-Parse-REST-API-Key", Constant.REST_KEY);
-                request = request.newBuilder().headers(builder.build()).build();
-                return chain.proceed(request);
-            }
+        return chain -> {
+            Request request = chain.request();
+            Headers.Builder builder = request.headers().newBuilder();
+            builder.add("X-Parse-Application-Id", Constant.APP_ID);
+            builder.add("X-Parse-REST-API-Key", Constant.REST_KEY);
+            request = request.newBuilder().headers(builder.build()).build();
+            return chain.proceed(request);
         };
     }
 

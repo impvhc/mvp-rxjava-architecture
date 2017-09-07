@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.impvhc.xat.fragment.EmptyFragment;
+import com.impvhc.xat.fragment.RecyclerFragment;
 
 /**
  * Created by victor on 9/6/17.
@@ -25,7 +26,7 @@ public class MainAdapter extends FragmentStatePagerAdapter {
             case 0:
                 return EmptyFragment.newInstance();
             case 1:
-                return EmptyFragment.newInstance();
+                return RecyclerFragment.newInstance();
             case 2:
                 return EmptyFragment.newInstance();
             default:

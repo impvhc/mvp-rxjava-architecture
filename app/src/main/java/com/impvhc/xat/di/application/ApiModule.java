@@ -1,7 +1,9 @@
 package com.impvhc.xat.di.application;
 
 import com.impvhc.xat.api.client.AuthClient;
+import com.impvhc.xat.api.client.BeerClient;
 import com.impvhc.xat.api.service.AuthService;
+import com.impvhc.xat.api.service.BeerService;
 
 import dagger.Module;
 import dagger.Provides;
@@ -15,13 +17,25 @@ import retrofit2.Retrofit;
 public class ApiModule {
     @ApplicationScope
     @Provides
-    public AuthService provideSignInService(AuthClient authClient) {
+    public AuthService providesSignInService(AuthClient authClient) {
         return new AuthService(authClient);
     }
 
     @ApplicationScope
     @Provides
-    public AuthClient provideSignInClient(Retrofit retrofit) {
+    public AuthClient providesSignInClient(Retrofit retrofit) {
         return retrofit.create(AuthClient.class);
+    }
+
+    @ApplicationScope
+    @Provides
+    public BeerService providesBeerService(BeerClient beerClient) {
+        return new BeerService(beerClient);
+    }
+
+    @ApplicationScope
+    @Provides
+    public BeerClient providesBeerClient(Retrofit retrofit) {
+        return retrofit.create(BeerClient.class);
     }
 }

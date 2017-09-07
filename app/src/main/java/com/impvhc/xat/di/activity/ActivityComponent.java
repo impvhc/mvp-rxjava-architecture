@@ -4,6 +4,7 @@ import com.impvhc.xat.activity.MainActivity;
 import com.impvhc.xat.activity.SignInActivity;
 import com.impvhc.xat.activity.SplashActivity;
 import com.impvhc.xat.presenter.MainPresenter;
+import com.impvhc.xat.presenter.RecyclerPresenter;
 import com.impvhc.xat.presenter.SignInPresenter;
 import com.impvhc.xat.presenter.SplashPresenter;
 
@@ -27,4 +28,6 @@ public interface ActivityComponent {
     void inject(MainActivity mainActivity);
 
     void inject(MainPresenter mainPresenter);
+
+    void inject(RecyclerPresenter recyclerPresenter);
 }

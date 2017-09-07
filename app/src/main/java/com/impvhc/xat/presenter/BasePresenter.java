@@ -7,6 +7,8 @@ import com.impvhc.xat.XatApplication;
 import com.impvhc.xat.di.activity.ActivityComponent;
 import com.impvhc.xat.di.activity.ActivityModule;
 
+import io.reactivex.disposables.CompositeDisposable;
+
 /**
  * Created by victor on 8/6/17.
  */
@@ -15,12 +17,13 @@ public abstract class BasePresenter<M,V>{
 
     protected M model;
     protected V view;
-
+    public CompositeDisposable compositeDisposable;
     protected BasePresenter(V view) {
         if (view == null) {
             throw new IllegalArgumentException("View must not be null");
         }
         this.view = view;
+        compositeDisposable = new CompositeDisposable();
     }
 
     protected BasePresenter(M model, V view) {
@@ -29,6 +32,7 @@ public abstract class BasePresenter<M,V>{
             throw new IllegalArgumentException("Model must be not be null");
         }
         this.model = model;
+        compositeDisposable = new CompositeDisposable();
     }
 
 
@@ -37,6 +41,7 @@ public abstract class BasePresenter<M,V>{
     public void onDestroy(){
         this.model = null;
         this.view = null;
+        compositeDisposable.clear();
     }
 
     public ActivityComponent getActivityComponent(View view){

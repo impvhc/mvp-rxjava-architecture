@@ -16,7 +16,6 @@ import com.impvhc.xat.view.SignInView;
 import javax.inject.Inject;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
@@ -31,8 +30,6 @@ public class SignInPresenter extends BasePresenter<Void,SignInView> {
 
     @Inject
     AppSharedPreferences appSharedPreferences;
-
-    private CompositeDisposable compositeDisposable = new CompositeDisposable();
 
     public SignInPresenter(SignInView view) {
         super(view);
