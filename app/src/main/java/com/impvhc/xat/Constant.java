@@ -5,8 +5,8 @@ package com.impvhc.xat;
  */
 
 public final class Constant {
-//    public static final String BASE_URL = "https://parse.buddy.com/parse/";
-    public static final String BASE_URL = "http://10.0.0.5:1337/parse/";
+    public static final String BASE_URL = "https://parse.buddy.com/parse/";
+//    public static final String BASE_URL = "http://192.168.2.18:1337/parse/";
     public static final String HEADER_SESSION_TOKEN = "X-Parse-Session-Token";
 
     public static final String APP_ID ="4c73fa79-d72c-4321-b97a-95260df1f917";

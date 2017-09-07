@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import com.impvhc.xat.R;
 import com.impvhc.xat.XatApplication;
+import com.impvhc.xat.model.BeerResponse;
 import com.squareup.picasso.Picasso;
 
 import javax.inject.Inject;
@@ -38,15 +39,21 @@ public class BeerViewHolder extends RecyclerView.ViewHolder {
         XatApplication.get().getApplicationComponent().inject(this);
     }
 
-    void setBeerName(String name){
+    void bindData(BeerResponse beerResponse){
+        setBeerName(beerResponse.getName());
+        setBeerDescription(beerResponse.getDescription());
+        setBeerImage(beerResponse.getImage_url());
+    }
+
+    private void setBeerName(String name){
         beerName.setText(name);
     }
 
-    void setBeerDescription(String description){
+    private void setBeerDescription(String description){
         beerDescription.setText(description);
     }
 
-    void setBeerImage(String url){
+    private void setBeerImage(String url){
         picasso.load(url).into(beerImage);
     }
 }

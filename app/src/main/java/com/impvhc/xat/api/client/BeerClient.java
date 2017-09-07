@@ -16,6 +16,6 @@ import static com.impvhc.xat.Constant.HEADER_SESSION_TOKEN;
  */
 
 public interface BeerClient {
-    @GET("classes/test")
+    @GET("classes/beer")
     Observable<ClassesResponse<List<BeerResponse>>> beers(@Header(HEADER_SESSION_TOKEN) String token);
 }
