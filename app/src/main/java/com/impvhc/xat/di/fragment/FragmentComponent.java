@@ -1,6 +1,7 @@
 package com.impvhc.xat.di.fragment;
 
 import com.impvhc.xat.fragment.EmptyFragment;
+import com.impvhc.xat.fragment.RecyclerFragment;
 
 import dagger.Subcomponent;
 
@@ -11,4 +12,6 @@ import dagger.Subcomponent;
 @Subcomponent(modules = { FragmentModule.class })
 public interface FragmentComponent {
     void inject(EmptyFragment emptyFragment);
+
+    void inject(RecyclerFragment recyclerFragment);
 }

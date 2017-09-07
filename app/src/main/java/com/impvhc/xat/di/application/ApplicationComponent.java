@@ -1,9 +1,11 @@
 package com.impvhc.xat.di.application;
 
+import com.impvhc.xat.adapter.BeerViewHolder;
 import com.impvhc.xat.di.activity.ActivityComponent;
 import com.impvhc.xat.di.activity.ActivityModule;
 import com.impvhc.xat.di.fragment.FragmentComponent;
 import com.impvhc.xat.di.fragment.FragmentModule;
+import com.squareup.picasso.Picasso;
 
 import dagger.Component;
 
@@ -17,6 +19,8 @@ public interface ApplicationComponent {
     ActivityComponent plus(ActivityModule activityModule);
 
     FragmentComponent plus(FragmentModule fragmentModule);
+
+    void inject(BeerViewHolder beerViewHolder);
 }
 
 

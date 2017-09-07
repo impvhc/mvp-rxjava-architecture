@@ -3,7 +3,9 @@ package com.impvhc.xat.di.activity;
 import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 
+import com.impvhc.xat.adapter.BeerAdapter;
 import com.impvhc.xat.adapter.MainAdapter;
+import com.impvhc.xat.model.BeerResponse;
 import com.impvhc.xat.presenter.MainPresenter;
 import com.impvhc.xat.presenter.SignInPresenter;
 import com.impvhc.xat.presenter.SplashPresenter;
@@ -11,6 +13,8 @@ import com.impvhc.xat.view.MainView;
 import com.impvhc.xat.view.SignInView;
 import com.impvhc.xat.view.SplashView;
 import com.tbruyelle.rxpermissions2.RxPermissions;
+
+import java.util.ArrayList;
 
 import dagger.Module;
 import dagger.Provides;
@@ -37,6 +41,12 @@ public class ActivityModule {
     @ActivityScope
     MainAdapter providesMainAdapter() {
         return new MainAdapter(((AppCompatActivity)mActivity).getSupportFragmentManager());
+    }
+
+    @Provides
+    @ActivityScope
+    BeerAdapter providesBeerAdapter() {
+        return new BeerAdapter(new ArrayList<BeerResponse>());
     }
 
     @Provides

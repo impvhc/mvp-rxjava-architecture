@@ -4,7 +4,9 @@ import android.content.Context;
 import android.support.v4.app.Fragment;
 
 import com.impvhc.xat.presenter.EmptyPresenter;
+import com.impvhc.xat.presenter.RecyclerPresenter;
 import com.impvhc.xat.view.EmptyView;
+import com.impvhc.xat.view.RecyclerView;
 import com.tbruyelle.rxpermissions2.RxPermissionsFragment;
 
 import dagger.Module;
@@ -42,5 +44,17 @@ public class FragmentModule {
     @FragmentScope
     public EmptyPresenter providesEmptyPresenter(EmptyView view){
         return new EmptyPresenter(view);
+    }
+
+    @Provides
+    @FragmentScope
+    public RecyclerView providesRecyclerView(){
+        return new RecyclerView(mContext);
+    }
+
+    @Provides
+    @FragmentScope
+    public RecyclerPresenter providesRecyclerPresenter(RecyclerView view){
+        return new RecyclerPresenter(view);
     }
 }
